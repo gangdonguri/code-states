@@ -1,0 +1,26 @@
+[C127] DevOps를 실현 가능하게 하기 위해 기술이 필요한 부분과, 기술이 아닌 문화로 풀어야 할 부분은 각각 무엇인가요? CI/CD 파이프라인에 근거해 답해봅시다.
+
+A:
+현재의 IT 시장 상황에 필수적인 요구사항은 사용자의 피드백에 민첩하게 대응하는 것이다. 이러한 배경속에서 CI/CD 라는 개념이 등장하였다.
+
+Plan-Code-Build-Test-Release-Deploy-Operate 7단계의 개발 라이프사이클은 1주기로 끝나는 것이 아니다. 여러 번 반복되어 결국 사용자의
+서비스 경험을 차츰 개선할 수 있다. 이를 "서비스 배포 Workflow를 구성한다." 또는 "CI/CD 파이프라인을 구축한다."고 하고 참고로 이러한
+모델을 애자일 모델이라고 한다.
+
+지금까지는 CI/CD 파이프라인에 대해 추상적인 모델을 예로 설명하였고, 이를 실현할 여러가지 DevOps 도구들이 오픈소스 또는 상용 소프트웨어
+형태로 개발되었다. 그 중 개발 라이프사이클의 단계와 연결하여 몇가지 소개하면, 다음과 같다.
+
+Code : git, svn ..
+Code-Build-Test-Release-Deploy : jenkins, github-action ..
+Deploy : docker, k8s, AWS, Terraform, Ansible ..
+
+DevOps는 단순히 도구를 사용한다고 해서 실현할 수 있는 개념은 아니다. DevOps를 설명하는 여러 문서들을 살펴보면 지루하게 나오는 단어가 있다
+바로 "문화, 철학" 이다.
+
+우리는 분명 기술이 아닌 문화로 풀어야 할 숙제들이 있다. 앞선 질문에서 Dev 팀과 Ops 팀의 목표에 대해 이야기 하였듯 두 팀은 결국 같은 목표를
+갖고 움직이고 있음을 되새겨야 한다. 그리고 이를 뒷받침하기 위해 긴밀히 의사소통하고 협력하여 사전에 방지할 수 있는 문제를 찾고 책임을 묻지
+않으며 서비스를 개선할 수 있는 방법을 함께 고민할 수 있는 시스템을 만들어야 한다고 생각한다.
+
+[출처: https://sre.google/sre-book/monitoring-distributed-systems/]
+[출처: https://aws.amazon.com/ko/devops/what-is-devops/]
+[출처: http://pds26.egloos.com/pds/201310/24/85/Devops1.pdf]
