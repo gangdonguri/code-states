@@ -1,0 +1,31 @@
+[C212] CLI로 ‘test’ 폴더를 만들고, 그 안에 ‘sample.txt’를 생성하는 작업을 하기 위해서는 어떤 명령이 필요한지 적고, 설명하세요.
+
+A:
+'폴더를 생성할 디렉터리 이동 - test 폴더 생성 - test 폴더 진입 - sample.txt 파일 생성' 순으로 진행
+
+1. 폴더를 생성할 디렉터리 이동 (임시 디렉터리인 /tmp 로 이동, 해당 디렉터리는 모든 사용자에게 디렉터리, 파일 쓰기 권한이 있음.)
+```bash
+cd /tmp
+```
+
+2. test 폴더 생성
+```bash
+mkdir test
+```
+
+3 test 폴더 진입
+```bash
+cd test
+```
+
+4. sample.txt 파일 생성
+```bash
+touch sample.txt
+```
+
+##### 참고
+> "위 절차는 &&(AND 연산자), 또는 ;(명령 분리자) 를 이용하여 명령줄 하나로도 표현이 가능함."
+```bash
+cd /tmp && mkdir test && cd test && touch sample.txt OR
+cd /tmp ; mkdir test ; cd test ; touch sample.txt
+```
