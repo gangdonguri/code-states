@@ -1,0 +1,24 @@
+터미널에서 nslookup 명령을 실행 했을 때 나오는 결과값에 대한 설명을 작성하세요.
+
+A:
+```bash
+Server:         8.8.8.8
+Address:        8.8.8.8#53
+
+Non-authoritative answer:
+www.naver.com   canonical name = www.naver.com.nheos.com.
+www.naver.com.nheos.com canonical name = www.naver.com.edgekey.net.
+www.naver.com.edgekey.net       canonical name = e6030.a.akamaiedge.net.
+Name:   e6030.a.akamaiedge.net
+Address: 104.94.216.175
+```
+
+- `server`: 서버에 등록된 DNS 네임 서버
+- `Address`: DNS 네임 서버의 공인 IP주소 및 Port (8.8.8.8: 공인 IP, #53: Port)
+- `Non-authoritative answer`: 권한있는 응답이 아님을 의미 (권한있는 응답이란 실제 www.naver.com에 대한 주소 값을 저장하고 있는 DNS 서버에서 가져온 경우를 말함, 권한있는 응답이 아닌 경우 로컬 캐시 또는 DNS 캐시서버에서 반환되었음을 의미함)
+- canonical name(CNAME)을 통해 www.naver.com 주소는 최종적으로 e6030.a.akamaiedge.net.의 주소 값을 반환 받음.
+    - `www.naver.com canonical name = www.naver.com.nheos.com`: www.naver.com에 대한 별칭으로 www.naver.com.nheos.com.을 등록함.
+    - `www.naver.com.nheos.com canonical name = www.naver.com.edgekey.net.`: www.naver.com.nheos.com에 대한 별칭으로 www.naver.com.edgekey.net.을 등록함
+    - `www.naver.com.edgekey.net canonical name = e6030.a.akamaiedge.net.`: www.naver.com.edgekey.net에 대한 별칭으로 e6030.a.akamaiedge.net을 등록함
+- `Name: e6030.a.akamaiedge.net`: 최종적으로 e6030.a.akamaiedge.net의 주소를 쿼리하였음. (e6030.a.akamaiedge.net 서버에서 www.naver.com 페이지를 호스팅하고 있음을 예상할 수 있음.)
+- `Address`: e6030.a.akamaiedge.net 서버의 IP 주소
